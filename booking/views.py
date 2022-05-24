@@ -3,5 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, 'eventinfo/index.html')
+    return render(request, 'booking/index.html')
 

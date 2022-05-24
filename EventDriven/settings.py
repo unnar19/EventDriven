@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
-    'eventinfo.apps.EventinfoConfig'
+    'booking.apps.BookingConfig'
 ]
 
 MIDDLEWARE = [
