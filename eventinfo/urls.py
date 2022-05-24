@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     #http://localhost:8000/eventinfo
-    path('', views.index, name = 'index'),
+    path('', views.index, name='eventinfo-index'),
 ]
