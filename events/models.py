@@ -1,11 +1,9 @@
 from django.db import models
 
 class Categories(models.Model):
-    category_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=30)
 
 class Event(models.Model):
-    event_id = models.IntegerField(primary_key=True)
     image_url = models.CharField(max_length=9999)
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
@@ -16,7 +14,6 @@ class Event(models.Model):
     max_attendees = models.IntegerField()
 
 class Ticket(models.Model):
-    ticket_id = models.IntegerField(primary_key=True)
     price = models.IntegerField()
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
 

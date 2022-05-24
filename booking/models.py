@@ -3,7 +3,6 @@ from user.models import Account
 from events.models import Ticket
 
 class Payment(models.Model):
-    payment_id = models.IntegerField(primary_key=True)
     time = models.TimeField()
     date = models.DateField()
     subtotal = models.IntegerField()

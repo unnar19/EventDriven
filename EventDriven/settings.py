@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
-    'booking.apps.BookingConfig'
+    'booking.apps.BookingConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'EventDriven.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'event-driven-db',
+        'USER': 'event-driven-db-user',
+        'PASSWORD': 'SWAG1234',
+        'HOST': '35.242.157.149',
+        'PORT': '5432'
     }
 }
 
