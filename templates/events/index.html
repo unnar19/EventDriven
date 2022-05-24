@@ -3,5 +3,11 @@
     <div class = "events">
         <h1> Events site! With all events</h1>
     </div>
+    {% for eve in event %}
+        <h4>{{ eve.name }}</h4>
+        <p>{{ eve.price }}$</p>
+
+    {% endfor %}
+
 
 {% endblock %}
