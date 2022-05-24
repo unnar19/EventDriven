@@ -2,3 +2,7 @@
     background-color: aquamarine;
     border: solid 3px red;
 }
+
+.navbar-brand { 
+    color: white;
+ }
