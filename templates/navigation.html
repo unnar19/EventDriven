@@ -1,24 +1,20 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-expand">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img class="logo" src="/static/images/full_event_driven_logo.png" alt="EventDriven brand logo">
     </a>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Services</span> <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-          <li><a href="#">Service A</a></li>
-          <li><a href="#">Service B</a></li>
-          <li class="dropdown-submenu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Service C</span><span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  <li><a href="#">Service C1</a></li>
-                  <li><a href="#">Service C2</a></li>
-                  <li><a href="#">Service C3</a></li>
-                  <li><a href="#">Service C4</a></li>
-                  <li><a href="#">Service C5</a></li>
-              </ul>
-          </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'event-index' %}">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'booking-index' %}">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'user-index' %}">My Account</a>
+        </li>
       </ul>
-  </li>
+    </div>
   </div>
 </nav>
