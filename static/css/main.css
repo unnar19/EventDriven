@@ -1,8 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Niramit&family=Outfit&display=swap');
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: black;
+    color:white;
+}
+
 .events {
     background-color: aquamarine;
     border: solid 3px red;
 }
 
-.navbar-brand { 
-    color: white;
- }
+.navbar { 
+    background-color: #c93b3b;
+}
+
+.navbar-toggler {
+    height:3rem;
+    color:white;
+    border-color: white;
+}
+
+.navbar-toggler span{
+    height:3rem;
+    color:white;
+    border-color: white;
+}
+
+.nav-link {
+    color:white;
+}
+
+.logo {
+    height: 3rem;
+}
+
+.bi {
+    color:white;
+    margin-left: .5rem;
+}
