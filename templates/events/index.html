@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class = "events">
-        <h1> Events site! With all events</h1>
+    <h1 class = "red">All events</h1>
+    <div class = "list_of_events">
+        {% for event in events %}
+            {% include 'events/single_event.html' with event=event %}
+        {% endfor %}
     </div>
-    {% for eve in event %}
-        <h4>{{ eve.name }}</h4>
-        <p>{{ eve.price }}$</p>
-
-    {% endfor %}
-
-
 {% endblock %}

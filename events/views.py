@@ -1,10 +1,7 @@
 from django.shortcuts import render
-
-event = [
-    {'name': 'MLM', 'price': 69.99 },
-    {'name': 'HERBS LIFE', 'price': 96.66 }
-]
+from events.models import Event
 
 # Create your views here.
 def index(request):
-    return render(request, 'events/index.html', context={'event': event })
+    events = {'events': Event.objects.all().order_by('name')}
+    return render(request, 'events/index.html', events)
