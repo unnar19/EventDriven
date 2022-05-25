@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1 class = "red">All events</h1>
     <div class = "list_of_events">
         {% for event in events %}
             {% include 'events/single_event.html' with event=event %}

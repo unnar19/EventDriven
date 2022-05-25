@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Niramit&family=Outfit&display=swap');
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background-color: black;
@@ -38,4 +43,22 @@ body {
 .bi {
     color:white;
     margin-left: .5rem;
+}
+
+.container {
+    width:100%;
+    margin:0px;
+}
+
+.events_img {
+    width: 30%;
+}
+
+.list_of_events {
+    width:100%;
+}
+
+.well_events {
+    display: inline-block;
+    width:30%;
 }
