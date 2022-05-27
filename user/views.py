@@ -13,7 +13,7 @@ def create_user(request):
         form = UserCreateForm(data=request.POST)
         if form.is_valid():
             user = form.save()
-            return redirect('user-index')
+            return redirect('event-index')
     else:
         form = UserCreateForm()
     return render(request, 'user/create_user.html',{
