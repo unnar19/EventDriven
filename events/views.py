@@ -10,8 +10,3 @@ def get_event_by_id(request, id):
     return render(request,'events/event_dietails.html', {
         'event': get_object_or_404(Event, pk=id)
     })
-
-# def get_catagory_of_event(request, id):
-#     return render(request,'events/event_dietails.html', {
-#         'event': get_object_or_404(Categories, pk=id)
-#     })
