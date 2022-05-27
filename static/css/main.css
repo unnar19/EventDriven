@@ -52,6 +52,20 @@ body {
 
 .well_events {
     width:33.33%;
+    overflow: hidden;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.well_events:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    filter: brightness(60%);
 }
 
 @media screen and (max-width: 1000px){
@@ -63,7 +77,13 @@ body {
 .well_events img{
     width:100%;
     height:20rem;
-    object-fit: cover;    
+    object-fit: cover;
+    filter: brightness(80%);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; 
 }
 
 .well_events h1{
@@ -73,5 +93,19 @@ body {
     margin-bottom: 11.47em;
     margin-left: 1.5rem;
     color: white;
-    text-decoration: none;
+    filter: brightness(100%)  
+}
+.well_events h2{
+    opacity: 0;
+    transition: 0.5s;
+    font-family: 'Outfit', sans-serif;
+    font-size:larger;
+    margin-top: -17rem;
+    margin-bottom: 11.47em;
+    margin-left: 1.5rem;
+    color: white;
+    filter: brightness(100%)  
+}
+.well_events:hover h2 {
+    opacity: 1;
 }
