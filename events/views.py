@@ -3,7 +3,7 @@ from events.models import Event
 
 # Create your views here.
 def index(request):
-    events = {'events': Event.objects.all().order_by('name')}
+    events = {'events': Event.objects.all().order_by('date')}
     return render(request, 'events/index.html', events)
 
 def get_event_by_id(request, id):
