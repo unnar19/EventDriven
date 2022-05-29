@@ -1,7 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Event name: {{ event.name }}</h1>
-    <p>Event information: {{ event.description }}</p>
-    <p>Ticket price: Vantar gögn i tickets</p>
-    <img class="events_img" src="{{ event.image_url }}">}
+
+<div class="details_container">
+    <div class="text_info">
+        <h1>{{ event.name }}</h1>
+        <p>{{ event.date }}</p>
+        <p>{{ event.time }}</p>
+        <p class="v2_space"></p>
+        <p>Description:</p>
+        <p>{{ event.description }}</p>
+        <p class="v2_space"></p>
+        <p>Location: {{ event.location }}</p>
+        <p>Maximum attendees: {{ event.max_attendees }}</p>
+        <p class="v2_space"></p>
+        <h2>Price: {{ ticket.price }}</h2>
+        <button class="btn dark_btn">Book now</button>
+    </div>
+    <div class="img_info">
+        <p>Similar events:</p> 
+        <img class="events_img2" src="{{ event.image_url }}">
+        <img class="events_img2" src="{{ event.image_url }}">
+        <p class="v_space"></p>
+        <p class="v_space"></p>
+        <p>Images:</p> 
+        <img class="events_img2" src="{{ event.image_url }}">
+        <img class="events_img2" src="{{ event.image_url }}">
+    </div>
+</div>
+<button class="btn light_btn">Back</button>
 {% endblock %}

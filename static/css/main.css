@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Niramit&family=Outfit&display=swap');
 
+
+/* All elements ====================================================*/
 *{
     margin: 0px;
     padding: 0px;
@@ -8,27 +10,25 @@
 body {
     font-family: 'Outfit', sans-serif;
     background-color: black;
-    color:white;
-}
+    color:white }
 
-.navbar { 
-    background-color: #c93b3b;
-}
-
-.logo {
-    height: 3rem;
-}
+/* Navigation Bar ====================================================*/
+.navbar { background-color: #c93b3b }
+.logo { height: 3rem }
 
 .bi {
     color:white;
-    margin-left: 0.5rem;
-}
+    margin-left: 0.5rem }
 
 .form-group {
-    margin-left: 3rem;
+    width: auto;
+    max-width: 300px;
 }
+
+.filter-btn { margin-right: 200px } 
 .sub_btn {
-    margin-left: 1rem;
+    margin-left: 0.1rem;
+    height: 2.5rem;
     color: white;
 }
 .icon {
@@ -36,6 +36,89 @@ body {
     color: white;
 }
 
+/* Filter dropdown ====================================================*/
+.drop-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0px;
+    border: none;
+    border-top:1px solid #db7171;
+    background-color: #be3636;
+}
+
+.right-align {
+    position: absolute;
+    right: 0;
+    margin-right: 2rem;
+    margin-left:200px;
+}
+
+.h-center {
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    border: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-nav { margin-right: 130px }
+.nav-button h4 { color: #f6bfbf; font-size: 1.2rem; }
+.nav-button {width:20%; min-width: 150px;}
+.nav-button a {width:80%; }
+.nav-check h4 { color: #f6bfbf; font-size: 1.2rem;}
+
+.nav-check {
+    width:40%;
+    min-width: 250px;
+    margin-left: -2%;
+}
+
+.form-check {
+    display:inline-block;
+    margin-right:0.5rem;
+    min-width: 110px;
+    width:25%;
+    max-width:200px;
+}
+
+.list-of-categories {
+    height:75px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.form-check-input {
+    background-color: white;
+}
+.form-check-input:checked {
+    background-color: #c93b3b;
+    border-color: white;
+}
+
+.nav-slider h4 { color: #f6bfbf; font-size: 1.2rem; text-align: left; margin-bottom: 1rem;}
+.nav-slider {
+    text-align: center;
+    width:40%;
+    min-width: 120px;
+}
+
+
+.filt-btn {
+    color: white;
+    width: 100%;
+    text-align: left;
+}
+
+.filt-slide {
+    color: black;
+    width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb { background: #f6bfbf !important; }
+
+
+/* Events listing ====================================================*/
 .events_img {
     width: 100%;
 }
@@ -103,6 +186,91 @@ a:link {
     color: white;
     filter: brightness(100%)  
 }
-.well_events:hover h2 {
-    opacity: 1;
+.well_events:hover h2 { opacity: 1; }
+
+/* Event screen ====================================================*/
+.details_container {
+    padding: 1rem;
+    float: left;
+}
+
+.details_container h1{
+    font-family: 'Niramit', sans-serif;
+    min-height:2rem;
+    margin-bottom: 1rem;
+    
+}
+
+.details_container p{
+    margin-top: -1rem;
+    font-size: 1.5rem;
+}
+.v_space {
+    height:1rem;
+}
+.v2_space {
+    height:3rem;
+}
+
+.text_info {
+    width: 40%;
+    display:inline-block;
+    padding-left: 1rem;
+    min-width:300px;
+}
+
+.dark_btn {
+    background-color:#c93b3b;
+    color: white;
+    font-size: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    min-width:210px;
+}
+
+.dark_btn:hover {
+    background-color:#db7171;
+}
+.dark_btn:focus {
+    background-color:#c93b3b;
+}
+
+.light_btn {
+    position:absolute; top:5rem; right:0;
+    background-color:#c93b3b;
+    color: white;
+    float: right;
+    margin: 1rem;
+}
+
+.light_btn:hover {
+    background-color:#db7171;
+}
+.light_btn:focus {
+    background-color:#c93b3b;
+}
+
+.events_img2 {
+    width: 45%;
+    margin-bottom: 1rem;
+    padding:0.5rem;
+    height:15rem;
+    object-fit: cover;
+}
+.img_info {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width:54%;
+    display:inline-block;
+    vertical-align: top;
+    min-width: 200px;
+}
+
+@media screen and (max-width: 789px){
+    .text_info {
+        width: 100%;
+    }
+    .img_info {
+        width: 100%;
+    }
 }

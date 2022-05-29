@@ -4,19 +4,76 @@
       <img class="logo" src="/static/images/full_event_driven_logo.png" alt="EventDriven brand logo">
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav">
         <form class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control input-search" placeholder="Search">
           </div>
         </form>
-        <button type="submit" class="btn sub_btn">
+        <button type="submit" class="btn sub_btn ">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>
         </button>
-        <a type="submit" class="btn sub_btn" href="{% url 'create_user' %}">Create account</a>
+        <a class="btn sub_btn filter_btn" data-bs-toggle="collapse" href="#filt" role="button" aria-expanded="false" aria-controls="filt">
+          Filters
+        </a>
+        <!--<a type="submit" class="btn sub_btn " href="{% url 'create_user' %}">Create account</a>-->
+        <a class="btn sub_btn right-align" data-bs-toggle="collapse" href="#myacc" role="button" aria-expanded="false" aria-controls="myacc">
+          My account
+        </a>
       </ul>
     </div>
   </div>
 </nav>
+<div class="collapse" id="filt">
+  <div class="card drop-container">
+    <div class="h-center">
+      <div class="nav-button">
+        <h4>Quick select:</h4> 
+        <a type="submit" class="btn filt-btn" href="#">Favourites</a>
+        <a type="submit" class="btn filt-btn" href="#">Clear all</a>
+      </div>
+      <div class="nav-check">
+        <h4>Categories:</h4> 
+        <div class="list-of-categories">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Concerts</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+            <label class="form-check-label" for="flexCheckDefault2">MLM</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+            <label class="form-check-label" for="flexCheckDefault3">Night-life</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+            <label class="form-check-label" for="flexCheckDefault4">Children</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+            <label class="form-check-label" for="flexCheckDefault5">Expo</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+            <label class="form-check-label" for="flexCheckDefault6">Misc.</label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-slider">
+        <h4>Price range: </h4> 0 kr - <output>50</output>.000 kr
+        <input type="range" value="100" min="1" max="50" oninput="this.previousElementSibling.value = this.value" class="form-range filt-slide">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="collapse" id="myacc">
+  <div class="card drop-container">
+    <p>nice</p>
+  </div>
+</div>
