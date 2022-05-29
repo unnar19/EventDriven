@@ -256,6 +256,7 @@ a:link {
     padding:0.5rem;
     height:15rem;
     object-fit: cover;
+    border-radius: 2rem;
 }
 .img_info {
     margin-top: 1rem;

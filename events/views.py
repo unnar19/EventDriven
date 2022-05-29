@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from events.models import Event,Ticket
 
 
@@ -19,13 +19,10 @@ def index(request):
     return render(request, 'events/index.html', context)
 
 
-def get_price_for_event(request, id):
-    return render(request, 'events/index.html', {
-        'ticket': get_object_or_404(Ticket, pk=id)
-    })
-
 
 def get_event_by_id(request, id):
     return render(request,'events/event_dietails.html', {
-        'event': get_object_or_404(Event, pk=id)
+        'event': get_object_or_404(Event, pk=id),
+        'price': get_list_or_404(Ticket, event_id=id)[0].price
     })
+
