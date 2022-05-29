@@ -10,10 +10,29 @@
 body {
     font-family: 'Outfit', sans-serif;
     background-color: black;
-    color:white }
+    color:white ;
+    display: block}
+
+.container_element {
+    position: absolute;
+    display: block;
+    top: 74px; 
+    width: 100%;   
+}
+
+.content_without_footer{
+    display:flex;
+    height: auto;
+    min-height: calc(100vh - 124px)
+}
+
 
 /* Navigation Bar ====================================================*/
-.navbar { background-color: #c93b3b }
+.navigation {
+    position: fixed; top:0; width:100%;
+    z-index:1
+}
+.navbar { background-color: #c93b3b;}
 .logo { height: 3rem }
 
 .bi {
@@ -44,6 +63,7 @@ body {
     border: none;
     border-top:1px solid #db7171;
     background-color: #be3636;
+
 }
 
 .right-align {
@@ -189,6 +209,7 @@ a:link {
 .well_events:hover h2 { opacity: 1; }
 
 /* Event screen ====================================================*/
+
 .details_container {
     padding: 1rem;
     float: left;
@@ -236,7 +257,7 @@ a:link {
 }
 
 .light_btn {
-    position:absolute; top:5rem; right:0;
+    position:absolute; top:0; right:0;
     background-color:#c93b3b;
     color: white;
     float: right;
@@ -274,4 +295,12 @@ a:link {
     .img_info {
         width: 100%;
     }
+}
+
+/* Footer ====================================================*/
+.footer-foot {
+    z-index: 1;
+    height: 50px;
+    width: 100%;
+    background-color: #c93b3b;
 }
