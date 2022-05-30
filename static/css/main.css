@@ -54,6 +54,16 @@ body {
     background-color: #c93b3b;
 }
 
+.sub_btn:disabled, .sub_btn[disabled] {
+    background-color: #c93b3b;
+    border-color:#c93b3b;
+    color: white;
+}
+
+.sub_btn:focus{
+    background-color: #c93b3b;
+}
+
 .icon {
     margin-top: -0.2rem;
     color: white;
@@ -314,4 +324,50 @@ a:link {
 }
 
 /* Booking details ====================================================*/
+#sub {
+    z-index: 1;
+}
 
+.booking_title {
+    font-family: 'Niramit', sans-serif;
+}
+
+.counter {
+    width: 3rem;
+    text-align: center;
+    padding:0.5rem;
+}
+
+.counter_container {
+    width: 425px;
+    height: 2.7rem;
+    
+}
+
+#subtotal {
+    margin-left: 0.4rem;
+    display:inline-block;
+    vertical-align: middle;
+}
+#price_indicator {
+    margin-left: 0.4rem;
+    display:inline-block;
+}
+
+.bg_image {
+    position: fixed;
+    align-self: center;
+    top:0;
+    z-index: -2;
+
+    
+    
+    min-width: 100vw;
+    filter: contrast(150%);
+    filter: brightness(40%);
+}
+
+.padded_content {
+    padding: 1rem;
+    padding-left: 2rem;
+}

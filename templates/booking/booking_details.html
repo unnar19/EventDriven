@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-
-    <h3>DETAILS FOR AN EVENT :)</h3>
-    <p>name: {{ event.name }}</p>
-    <p>subtotal: {{ price }}</p>
-
+<div class="booking_container">
+    <div class="padded_content">
+        <a class="btn light_btn" href="/events/{{ event.id }}">Back</a>
+        <h1 class="booking_title">{{ event.name }}</h1>
+        <p class="v_space"></p>
+        <h3>Number of tickets:</h3>
+        <div class="counter_container">
+            <div class="btn-group">
+                <button class="btn sub_btn" id="sub" disabled="true">-</button>
+                <div class="sub_btn counter" id="amount">1</div>
+                <button class="btn sub_btn" id="add">+</button>
+            </div>
+            <h4 id="price_indicator"> Subtotal:</h4>
+            <h3 id="subtotal">{{ price }} </h3>
+            <h3 id="price_indicator"> kr.</h3>
+            </div>
+        </div>
+    <img class="bg_image" src="{{ event.image_url }}" alt="">
 </div>
 
 {% endblock %}

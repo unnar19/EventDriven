@@ -21,8 +21,35 @@ $(document).ready(function (){
                 $('#search-box').val('');
             },
             error: function(xhr, status, error) {
-                console.error(error);
+                console.error(error)
             }
         })
+    });
+});
+
+$(document).ready(function (){
+    let subtotal = $('#subtotal').text();
+
+    $('#add').on('click',function (e){
+        e.preventDefault();
+        var amount = parseInt($('#amount').text());
+        if ( amount < 10 ) {
+            $('#amount').html(amount + 1);
+            $('#sub').prop('disabled', false);
+            $('#subtotal').html(parseInt(subtotal)*(amount+1))
+        } if ( amount == 9 ) {
+            $('#add').prop('disabled', true);
+        }
+    });
+    $('#sub').on('click',function (e){
+        e.preventDefault();
+        var amount = parseInt($('#amount').text());
+        if (amount > 1) {
+            $('#amount').html(amount - 1);
+            $('#add').prop('disabled', false);
+            $('#subtotal').html(parseInt(subtotal)*(amount-1))
+        } if ( amount == 2 ) {
+            $('#sub').prop('disabled', true);
+        }
     });
 });
