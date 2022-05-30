@@ -20,4 +20,10 @@
     <img class="bg_image" src="{{ event.image_url }}" alt="">
 </div>
 
+    <form class="form form-horizontal" method="post" >
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Create" class="btn btn-primary pull-right" style="clear: both; margin: 10px 0"/>
+    </form>
+
 {% endblock %}

@@ -1,12 +1,10 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from events.models import Categories
 
 
-class Account(models.Model):
-    email = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
+class Account(AbstractUser):
+    fav_cat = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True)
     image_url = models.CharField(max_length=9999)
 
 
