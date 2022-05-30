@@ -8,13 +8,13 @@ def index(request):
         search_filter = request.GET['search_filter']
         events = [ {
             'id': x.id,
+            'image': x.image_url,
             'name': x.name,
-            'date': x.date,
-            'image': x.image_url
+            'date': x.date
         }for x in Event.objects.filter(name__icontains = search_filter)]
         return JsonResponse({'data:': events})
 
-    context = {'events': Event.objects.all().order_by('date')}
+    context = {'events': Event.objects.all().order_by('name')}
     # tickets = {'ticket': Ticket.objects.all()}
     return render(request, 'events/index.html', context)
 

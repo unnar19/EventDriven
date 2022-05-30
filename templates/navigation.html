@@ -16,6 +16,13 @@
           </svg>
         </button>
         <a type="submit" class="btn sub_btn" href="{% url 'create_user' %}">Create account</a>
+
+          {% if user.is_authenticadet %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}"> Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+          {% endif %} 
       </ul>
     </div>
   </div>
