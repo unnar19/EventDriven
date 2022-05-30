@@ -11,7 +11,8 @@ class Event(models.Model):
     description = models.CharField(max_length=200)
     category_id = models.ForeignKey(Categories, on_delete=models.CASCADE)
     time = models.TimeField()
-    date = models.DateField()
+    start_date = models.DateField()
+    end_date = models.DateField()
     location = models.CharField(max_length=100)
     max_attendees = models.IntegerField()
 
