@@ -13,3 +13,12 @@ class UserCreateForm(ModelForm):
             'password': widgets.TextInput(attrs={'class': 'form-control'}),
             'image_url': widgets.TextInput(attrs={'class': 'form-control'})
         }
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = Account
+        exclude = ['id', 'user']
+        widgets = {
+            'favorite_event': widgets.Select(attrs={'class': 'form-control'}),
+            'profile_image': widgets.TextInput(attrs={'class': 'form-control'})
+        }
