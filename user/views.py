@@ -1,4 +1,5 @@
 from user.forms.user_form import UserCreateForm
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404, redirect
 from user.models import Account
 
@@ -18,4 +19,14 @@ def create_user(request):
         form = UserCreateForm()
     return render(request, 'user/create_user.html',{
         'form': form
+    })
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    return render(request, 'user/register.html', {
+        'form': UserCreationForm()
     })

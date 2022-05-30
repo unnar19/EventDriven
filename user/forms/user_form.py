@@ -13,6 +13,3 @@ class UserCreateForm(ModelForm):
             'password': widgets.TextInput(attrs={'class': 'form-control'}),
             'image_url': widgets.TextInput(attrs={'class': 'form-control'})
         }
-
-
-

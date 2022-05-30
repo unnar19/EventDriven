@@ -7,14 +7,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <form class="navbar-form navbar-left">
-            <div class="input-group">
-                <input type="search" class="form-control" id="search-box" placeholder="Enter your search here...."/>
-                <div class="input-group-btn">
-                    <button type="button" id="search-btn" class="btn btn-default"></button>
-                </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-search" id="search-box" placeholder="Search">
             </div>
           </form>
-          <button type="submit" class="btn sub_btn ">
+          <button type="submit" class="btn sub_btn" id="search-btn">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
@@ -22,6 +19,12 @@
           <a class="btn sub_btn filter_btn" data-bs-toggle="collapse" href="#filt" role="button" aria-expanded="false" aria-controls="filt">
             Filters
           </a>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}"> Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+          {% endif %}
           <a class="btn sub_btn right-align" href="/user">
             My account
           </a>
