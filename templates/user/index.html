@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class = "user_input">
-        <h1> User! With all user screens</h1>
+        <h1> Login and signup eða settings</h1>
+        <a type="submit" class="btn sub_btn" href="{% url 'create_user' %}">
+            Sign-up!
+        </a>
     </div>
 {% endblock %}
