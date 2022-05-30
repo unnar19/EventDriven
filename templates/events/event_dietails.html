@@ -6,8 +6,9 @@
         <a class="btn light_btn" href="/">Back</a>
         <div class="text_info">
             <h1>{{ event.name }}</h1>
-            <p>{{ event.start_date }}</p>
-            <p>{{ event.end_date }}</p>
+            <div class="date_formatting">
+                <p>{{ event.start_date }} - {{ event.end_date }}</p>
+            </div>
             <p>{{ event.time }}</p>
             <p class="v2_space"></p>
             <p>Description:</p>
