@@ -11,7 +11,7 @@ $(document).ready(function (){
                                 <a href="/events/${d.id}">
                                     <img class="events_img" src="${d.image_url}" />
                                     <h4> ${d.name}</h4>
-                                    <p>${d.date}</p>
+                                    <p>${d.start_date}</p>
                                 </a> 
                             </div>`
                 });
