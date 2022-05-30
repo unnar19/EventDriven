@@ -19,7 +19,7 @@
           <a class="btn sub_btn filter_btn" data-bs-toggle="collapse" href="#filt" role="button" aria-expanded="false" aria-controls="filt">
             Filters
           </a>
-          {% if user.is_authenticadet %}
+          {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li><a href="{% url 'login' %}"> Login</a></li>
