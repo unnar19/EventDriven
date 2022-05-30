@@ -12,7 +12,7 @@ def index(request):
             'name': x.name,
             'start_date': x.start_date,
         }for x in Event.objects.filter(name__icontains = search_filter)]
-        return JsonResponse({'data:': events})
+        return JsonResponse({'data': events})
 
     context = {'events': Event.objects.all().order_by('start_date')}
     # tickets = {'ticket': Ticket.objects.all()}
