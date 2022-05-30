@@ -9,12 +9,12 @@ def index(request):
         events = [ {
             'id': x.id,
             'name': x.name,
-            'date': x.date,
+            'start_date': x.start_date,
             'image': x.image_url
         }for x in Event.objects.filter(name__icontains = search_filter)]
         return JsonResponse({'data:': events})
 
-    context = {'events': Event.objects.all().order_by('date')}
+    context = {'events': Event.objects.all().order_by('start_date')}
     # tickets = {'ticket': Ticket.objects.all()}
     return render(request, 'events/index.html', context)
 
