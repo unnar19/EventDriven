@@ -25,9 +25,17 @@
             <li><a href="{% url 'login' %}"> Login</a></li>
             <li><a href="{% url 'register' %}">Register</a></li>
           {% endif %}
+
+          {% if user.is_authenticated %}
           <a class="btn sub_btn right-align" href="/user">
             My account
           </a>
+          <a class="btn sub_btn right-align" href="{% url 'logout' %}">Logout</a>
+          {% else %}
+          <a class="btn sub_btn right-align" href="{% url 'login' %}">
+            My account
+          </a>
+          {% endif %}
         </ul>
       </div>
     </div>

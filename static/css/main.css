@@ -360,9 +360,6 @@ a:link {
     right:0;
     top:0;
     z-index: -2;
-
-    
-    
     min-width: 100vw;
     filter: contrast(150%);
     filter: brightness(40%);
