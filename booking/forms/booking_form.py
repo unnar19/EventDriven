@@ -4,11 +4,13 @@ from booking.models import Booking, Payment
 
 
 class CreatePaymentForm(ModelForm):
+
     class Meta:
         model = Payment
         exclude = ['id']
+        fields = ('date',)
         widgets = {
-            'time': widgets.TextInput(attrs={'class': 'form-control'}),
+            #'time': widgets.TextInput(attrs={'class': 'form-control'}),
             'date': widgets.TextInput(attrs={'class': 'form-control'}),
             'subtotal': widgets.TextInput(attrs={'class': 'form-control'}),
             'masked_card_num': widgets.TextInput(attrs={'class': 'form-control'}),
@@ -17,7 +19,7 @@ class CreatePaymentForm(ModelForm):
 
 class CreateBookingForm(ModelForm):
     class Meta:
-        model = Payment
+        model = Booking
         exclude = ['payment_id', 'id', 'ticket_id']
         widgets = {
             'email': widgets.TextInput(attrs={'class': 'form-control'}),

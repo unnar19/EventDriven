@@ -10,26 +10,26 @@ def index(request):
         'user': Account.objects.all()
     })
 
-def create_user(request):
-    if request.method == 'POST':
-        form = UserCreateForm(data=request.POST)
-        if form.is_valid():
-            user = form.save()
-            return redirect('event-index')
-    else:
-        form = UserCreateForm()
-    return render(request, 'user/create_user.html', {
-        'form': form
-    })
+# def create_user(request):
+#     if request.method == 'POST':
+#         form = UserCreateForm(data=request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             return redirect('event-index')
+#     else:
+#         form = UserCreateForm()
+#     return render(request, 'user/create_user.html', {
+#         'form': form
+#     })
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(data=request.POST)
+        form = UserCreateForm(data=request.POST)
         if form.is_valid():
             form.save()
             return redirect('login')
     return render(request, 'user/register.html', {
-        'form': UserCreationForm()
+        'form': UserCreateForm()
     })
 
 def profile(request):
@@ -41,6 +41,6 @@ def profile(request):
             profile.user = request.user
             profile.save()
             return redirect('profile')
-    return render(request, 'user.profile.html',{
+    return render(request, 'user.profile.html', {
         'form': ProfileForm(instance=profile)
     })
