@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Categories(models.Model):
     name = models.CharField(max_length=30)
 
@@ -18,6 +19,8 @@ class Event(models.Model):
 class Ticket(models.Model):
     price = models.IntegerField()
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+
 
 
 
