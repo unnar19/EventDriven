@@ -8,9 +8,9 @@ def index(request):
         search_filter = request.GET['search_filter']
         events = [ {
             'id': x.id,
+            'image': x.image_url,
             'name': x.name,
             'start_date': x.start_date,
-            'image': x.image_url
         }for x in Event.objects.filter(name__icontains = search_filter)]
         return JsonResponse({'data:': events})
 

@@ -9,9 +9,9 @@ $(document).ready(function (){
                 var newHtml = resp.data.map(d => {
                     return `<div class="well_events"> 
                                 <a href="/events/${d.id}">
-                                    <h4> ${d.name}</h4>
-                                    <p>${d.date}</p>
                                     <img class="events_img" src="${d.image_url}" />
+                                    <h4> ${d.name}</h4>
+                                    <p>${d.start_date}</p>
                                 </a> 
                             </div>`
                 });
