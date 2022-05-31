@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from events.models import Event,Ticket
-
+from datetime import datetime
 
 def index(request):
     if 'search_filter' in request.GET:
@@ -14,7 +14,8 @@ def index(request):
         }for x in Event.objects.filter(name__icontains = search_filter)]
         return JsonResponse({'data': events})
 
-    context = {'events': Event.objects.all().order_by('start_date')}
+    today = datetime.today()
+    context = {'events': Event.objects.filter(start_date__gte=today).order_by('start_date')}
     # tickets = {'ticket': Ticket.objects.all()}
     return render(request, 'events/index.html', context)
 
