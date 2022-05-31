@@ -20,23 +20,25 @@
             Filters
           </a>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <a class="btn sub_btn right-align_1" href="{% url 'logout' %}">Logout</a>
+            <a class="btn sub_btn right-align_2" href="{% url 'profile' %}">
+                Profile
+                <img src="{{ user.image_url }}" class="profile_image"></a>
           {% else %}
-            <li><a href="{% url 'login' %}"> Login</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
+            <a class="btn sub_btn right-align_1" href="{% url 'login' %}"> Login</a>
+            <a class="btn sub_btn right-align_2" href="{% url 'register' %}">Register</a>
           {% endif %}
 
-          {% if user.is_authenticated %}
-          <a class="btn sub_btn right-align" href="/user">
-            My account
-          </a>
-          <a class="btn sub_btn right-align" href="{% url 'logout' %}">Logout</a>
-          {% else %}
-          <a class="btn sub_btn right-align" href="{% url 'login' %}">
-            My account
-          </a>
-          {% endif %}
+{#          {% if user.is_authenticated %}#}
+{#          <a class="btn sub_btn right-align" href="/user">#}
+{#            My account#}
+{#          </a>#}
+{#          <a class="btn sub_btn right-align" href="{% url 'logout' %}">Logout</a>#}
+{#          {% else %}#}
+{#          <a class="btn sub_btn right-align" href="{% url 'login' %}">#}
+{#            My account#}
+{#          </a>#}
+{#          {% endif %}#}
         </ul>
       </div>
     </div>

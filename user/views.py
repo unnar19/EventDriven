@@ -1,7 +1,7 @@
 from user.forms.user_form import UserCreateForm, ProfileForm
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404, redirect
-from user.models import Account
+from user.models import Account, Categories
 from django.forms import ModelForm, widgets
 
 # Create your views here.
@@ -32,6 +32,7 @@ def register(request):
         'form': UserCreateForm()
     })
 
+
 def profile(request):
     profile = Account.objects.filter(id=request.user.id).first()
     if request.method == 'POST':
@@ -42,5 +43,6 @@ def profile(request):
             profile.save()
             return redirect('profile')
     return render(request, 'user/profile.html', {
-        'form': ProfileForm(instance=profile)
+        'form': ProfileForm(instance=profile),
+        # 'categories': Categories.objects.all()
     })

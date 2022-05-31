@@ -80,7 +80,14 @@ body {
 
 }
 
-.right-align {
+.right-align_1 {
+    position: absolute;
+    right: 100px;
+    margin-right: 2rem;
+    margin-left:200px;
+}
+
+.right-align_2 {
     position: absolute;
     right: 0;
     margin-right: 2rem;
@@ -137,6 +144,11 @@ body {
     min-width: 120px;
 }
 
+.profile_image {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
 
 .filt-btn {
     color: white;
