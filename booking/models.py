@@ -2,12 +2,16 @@ from django.db import models
 from user.models import Account
 from events.models import Event
 
+#'name_of_card_holder','card_number','exp_date','cvc'
+
 class Payment(models.Model):
     time = models.TimeField()
     date = models.DateField()
     subtotal = models.IntegerField()
-    masked_card_num = models.CharField(max_length=200)
-    retrieval_ref_num = models.CharField(max_length=200)
+    name_of_card_holder = models.CharField(max_length=200)
+    card_number = models.CharField(max_length=16)
+    exp_date = models.DateField()
+    cvc = models.IntegerField()
 
 class Booking(models.Model):
     email = models.ForeignKey(Account, on_delete=models.CASCADE)

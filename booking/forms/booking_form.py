@@ -4,17 +4,15 @@ from booking.models import Booking, Payment
 
 
 class CreatePaymentForm(ModelForm):
-
     class Meta:
         model = Payment
         exclude = ['id']
-        fields = ('date',)
+        fields = ('name_of_card_holder','card_number','exp_date','cvc')
         widgets = {
-            #'time': widgets.TextInput(attrs={'class': 'form-control'}),
-            'date': widgets.TextInput(attrs={'class': 'form-control'}),
-            'subtotal': widgets.TextInput(attrs={'class': 'form-control'}),
-            'masked_card_num': widgets.TextInput(attrs={'class': 'form-control'}),
-            'retrieval_ref_num': widgets.TextInput(attrs={'class': 'form-control'})
+            'name_of_card_holder': widgets.TextInput(attrs={'class': 'form-control'}),
+            'card_number': widgets.TextInput(attrs={'class': 'form-control'}),
+            'exp_date': widgets.DateInput(attrs={'class': 'form-control'}),
+            'cvc': widgets.TextInput(attrs={'class': 'form-control'})
         }
 
 class CreateBookingForm(ModelForm):
