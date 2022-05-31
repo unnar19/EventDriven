@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, User
 from django.forms import ModelForm, widgets
 from django import forms
-from user.models import Account
+from user.models import Account, Categories
 
 
 class UserCreateForm(UserCreationForm):
@@ -19,7 +19,8 @@ class UserCreateForm(UserCreationForm):
 
 class ProfileForm(ModelForm):
     class Meta:
-        model = Account
+        model = Account, Categories
+        fields = ('fav_cat', 'image_url')
         exclude = ['id', 'user']
         widgets = {
             'favorite_event': widgets.Select(attrs={'class': 'form-control'}),
