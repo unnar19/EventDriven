@@ -15,9 +15,10 @@
             <h4 id="price_indicator"> Subtotal:</h4>
             <h3 id="subtotal">{{ price }} </h3>
             <h3 id="price_indicator"> kr.</h3>
-            </div>
         </div>
-    <img class="bg_image" src="{{ event.image_url }}" alt="">
+        {% include 'booking/accordion.html' %}
+    </div>
+    <div class="bg_container" style="background-image: url('{{ event.image_url }}');"></div>
 </div>
 
     <form class="form form-horizontal" method="post" >
