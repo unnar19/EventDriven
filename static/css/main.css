@@ -179,6 +179,7 @@ input[type=range]::-webkit-slider-thumb { background: #f6bfbf !important; }
 .well_events {
     width:33.33%;
     overflow: hidden;
+    max-height: 20rem;
 }
 
 a:link {
@@ -317,6 +318,7 @@ a:link {
     vertical-align: top;
     min-width: 200px;
 }
+
 
 @media screen and (max-width: 789px){
     .text_info {
