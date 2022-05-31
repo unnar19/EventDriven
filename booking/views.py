@@ -24,7 +24,7 @@ def book_an_event(request, id):
             return redirect('booking-index')
     else:
         formpay = CreatePaymentForm()
-    return render(request, 'booking/booking_details.html', {
+    return render(request, 'booking/payment.html', {
         'form': formpay,
         'event': get_object_or_404(Event, pk=id)
     })
