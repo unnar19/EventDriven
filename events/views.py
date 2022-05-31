@@ -4,6 +4,7 @@ from datetime import datetime
 from events.models import Event
 
 def index(request):
+    today = datetime.today()
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         events = [ {
@@ -11,10 +12,9 @@ def index(request):
             'image': x.image_url,
             'name': x.name,
             'start_date': x.start_date,
-        }for x in Event.objects.filter(name__icontains = search_filter)]
+        }for x in Event.objects.filter(start_date__gte=today, name__icontains = search_filter).order_by('start_date')]
         return JsonResponse({'data': events})
-
-    today = datetime.today()
+    
     context = {'events': Event.objects.filter(start_date__gte=today).order_by('start_date')}
     # tickets = {'ticket': Ticket.objects.all()}
     return render(request, 'events/index.html', context)
