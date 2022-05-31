@@ -1,6 +1,6 @@
 from django.db import models
 from user.models import Account
-from events.models import Ticket
+from events.models import Event
 
 class Payment(models.Model):
     time = models.TimeField()
@@ -11,7 +11,7 @@ class Payment(models.Model):
 
 class Booking(models.Model):
     email = models.ForeignKey(Account, on_delete=models.CASCADE)
-    ticket_id = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
     amount = models.IntegerField()
     address = models.CharField(max_length=150)
     zip = models.IntegerField()
