@@ -323,6 +323,25 @@ a:link {
     background-color: #c93b3b;
 }
 
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    width: 200px;
+    height: 50px;
+    padding:0.2rem;
+    display: inline-block;
+}
+.flex-child h4 {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0px;
+    margin-top: 2.5px;
+    margin-left: 5px;
+}
+
+
 /* Booking details ====================================================*/
 #sub {
     z-index: 1;
