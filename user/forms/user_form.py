@@ -20,6 +20,7 @@ class UserCreateForm(UserCreationForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Account
+        fields = ('fav_cat','image_url','first_name')
         exclude = ['id', 'user']
         widgets = {
             'favorite_event': widgets.Select(attrs={'class': 'form-control'}),
