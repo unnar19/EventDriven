@@ -33,7 +33,7 @@ class CreatePaymentForm(ModelForm):
     class Meta:
         model = Payment
         exclude = ['id']
-        fields = ('name_of_card_holder','card_number','exp_date','cvc','time')
+        fields = ('name_of_card_holder','card_number','exp_date','cvc')
         widgets = {
             'name_of_card_holder': widgets.TextInput(attrs={'class': 'form-control'}),
             'card_number': widgets.NumberInput(attrs={'class': 'form-control'}),
