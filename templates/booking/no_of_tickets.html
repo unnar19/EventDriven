@@ -1,0 +1,18 @@
+Please select the number of tickets you want. A maximum of 10 tickets are available per user.
+<div class="counter_container">
+    <div class="btn-group side_by_side">
+        <button class="btn sub_btn" id="sub" disabled="true">-</button>
+        <div class="sub_btn counter" id="amount">1</div>
+        <button class="btn sub_btn" id="add">+</button>
+    </div>
+    <div class="side_by_side">
+        <h4 id="price_indicator"> Subtotal:</h4>
+        <h4 id="subtotal">{{ event.price }} </h4>
+        <h4 id="price_indicator"> kr.</h4>
+    </div>
+    Please select your preferred delivery method.
+    <div class="side_by_side">
+        <button class="btn double_line_btn">Postal delivery</button>
+        <button class="btn double_line_btn one_rem_right">E-mail delivery</button>
+    </div>
+</div>
