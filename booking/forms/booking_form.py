@@ -17,6 +17,7 @@ class CreatePaymentForm(ModelForm):
             'retrieval_ref_num': widgets.TextInput(attrs={'class': 'form-control'})
         }
 
+
 class CreateBookingForm(ModelForm):
     class Meta:
         model = Booking

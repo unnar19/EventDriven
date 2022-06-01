@@ -5,10 +5,13 @@ from user.models import Account, Categories
 from django.forms import ModelForm, widgets
 
 # Create your views here.
+
+
 def index(request):
     return render(request, 'user/index.html',{
         'user': Account.objects.all()
     })
+
 
 # def create_user(request):
 #     if request.method == 'POST':
@@ -21,6 +24,7 @@ def index(request):
 #     return render(request, 'user/create_user.html', {
 #         'form': form
 #     })
+
 
 def register(request):
     if request.method == 'POST':
