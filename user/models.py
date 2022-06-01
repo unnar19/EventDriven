@@ -4,5 +4,5 @@ from events.models import Categories
 
 
 class Account(AbstractUser):
-    fav_cat = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True)
+    fav_cat = models.ForeignKey(Categories, on_delete=models.SET_NULL, blank=True , null=True)
     image_url = models.CharField(max_length=9999)
