@@ -1,14 +1,17 @@
 from django.db import models
 from user.models import Account
 from events.models import Event
+from django.contrib.auth.hashers import make_password
 
 
 class Booking(models.Model):
+    full_name = models.CharField(max_length=250, blank=True, null=True)
     email = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     event_id = models.ForeignKey(Event, on_delete=models.SET_NULL, null=True)
-    amount = models.IntegerField()
-    address = models.CharField(max_length=150, blank=True, null=True)
-    zip = models.IntegerField(blank=True, null=True)
+    amount = models.PositiveIntegerField()
+    street_name = models.CharField(max_length=150, blank=True, null=True)
+    house_num = models.PositiveIntegerField(blank=True, null=True)
+    zip = models.PositiveIntegerField(blank=True, null=True)
     country = models.CharField(max_length=100, blank=True, null=True)
     city = models.CharField(max_length=100, blank=True, null=True)
 
@@ -19,6 +22,12 @@ class Payment(models.Model):
     subtotal = models.IntegerField()
     booking_id = models.ForeignKey(Booking, on_delete=models.SET_NULL, null=True)
     name_of_card_holder = models.CharField(max_length=250)
-    card_number = models.IntegerField()
+    card_number = models.CharField(max_length=256)
     exp_date = models.DateField()
     cvc = models.IntegerField()
+
+    def save(self, **kwargs):
+        some_salt = 'some_salt'
+        card_number = make_password(self.card_number, some_salt)
+        super().save(**kwargs)
+        
