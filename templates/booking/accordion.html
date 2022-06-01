@@ -19,6 +19,8 @@
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionBooking">
         <div class="accordion-body">
+            <div class="hiddenfield" id="hidden_user_email"> {{ user.email }}</div>
+            <div class="hiddenfield" id="hidden_event_id"> {{ event.id }}</div>
             {% include 'booking/delivery.html' %}
         </div>
       </div>
