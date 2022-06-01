@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 
 class Booking(models.Model):
     full_name = models.CharField(max_length=250, blank=True, null=True)
-    email = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
+    user_id = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     event_id = models.ForeignKey(Event, on_delete=models.SET_NULL, null=True)
     amount = models.PositiveIntegerField()
     street_name = models.CharField(max_length=150, blank=True, null=True)

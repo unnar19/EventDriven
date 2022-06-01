@@ -86,17 +86,3 @@ $(document).ready(function (){
         }
     });
 });
-
-$(document).ready(function (){
-    $('#postal_delivery').on('click',function (e){
-        fill_email_and_event_id()
-    });
-    $('#email_delivery').on('click',function (e){
-        fill_email_and_event_id()
-    });
-});
-
-function fill_email_and_event_id(){ 
-    $('#form-event_id').val(parseInt($('#hidden_event_id').text()))
-    $('#form-email').val($('#hidden_user_email').text())
-}

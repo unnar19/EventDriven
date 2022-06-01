@@ -9,16 +9,12 @@ class CreateBookingForm(ModelForm):
     hidden_del = forms.BooleanField(widget=forms.HiddenInput, initial=True)
     class Meta:
         model = Booking
-        exclude = ['id']
-        # labels = {
-        #     'email':"",
-        #     'event_id':"",
-        #     'amount':""
-        #     }
+        exclude = ['id','user_id','event_id']
+        labels = {
+             'amount':""
+             }
         widgets = {
-            'email': widgets.TextInput(attrs={'class': 'hiddenfield9','id': 'form-email'}),
-            'event_id': widgets.NumberInput(attrs={'class': 'hiddenfield9','id': 'form-event_id'}),
-            'amount': widgets.NumberInput(attrs={'class': 'hiddenfield9','id': 'form-amount','value':'1'}),
+            'amount': widgets.NumberInput(attrs={'class': 'hiddenfield','id': 'form-amount','value':'1'}),
             'full_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'street_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'house_num': widgets.NumberInput(attrs={'class': 'form-control'}),
