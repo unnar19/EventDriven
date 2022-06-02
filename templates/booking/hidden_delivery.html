@@ -1,8 +1,8 @@
 {% block content %}
-    <form id="delform" class="form form-horizontal hiddenfieldf" method="post">
+    <form id="delform" class="form form-horizontal" method="post">
     {% csrf_token %}
     {{ formdel }}
-    <input id="delform_btn" type="submit" class="btn sub_btn" value="swag">
+    <input id="delform_btn" type="submit" class="btn sub_btn hiddenfield" value="swag">
     </form>
     
 {% endblock %}
