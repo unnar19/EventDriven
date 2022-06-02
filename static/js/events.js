@@ -10,7 +10,7 @@ $(document).ready(function (){
                 console.log(resp.data)
                 var newHtml = resp.data.map(d => {
                     return `<div class="well_events"> 
-                                <a href="/even  ts/${d.id}">
+                                <a href="/events/${d.id}">
                                     <img class="events_img" src="${d.image}">
                                     <h1> ${d.name}</h1>
                                     <h2>${d.start_date}</h2>
@@ -32,15 +32,7 @@ $(document).ready(function (){
     $('#filter-btn').on('click',function (e){
         console.log('filter press')
         e.preventDefault();
-
-        var searchText = '';
-        var searchlist = [];
-        $('input[class="form-check-input"]:checked').each(function() {
-            searchlist.push($(this).attr('name'));
-        });
-        var searchText = searchlist.toString();
-        searchText = searchText.replace(new RegExp(',', 'g'),"")
-
+        var searchText = $('input[class="form-check-input"]:checked').val();
         $.ajax({
             url:'/events?event_filter=' + searchText,
             type: 'GET',
@@ -186,6 +178,6 @@ $(document).ready(function (){
 $(document).ready(function (){
 $('#confirm').on('click',function (e){
         e.preventDefault();
-        $('#delform_btn').trigger('click');g
+        $('#delform_btn').trigger('click');
     });
 });
