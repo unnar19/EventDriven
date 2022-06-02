@@ -49,11 +49,7 @@ def book_an_event(request, id):
 
                 del_model.save()
 
-<<<<<<< HEAD
-                # return redirect('booking-index')
-=======
                 pass
->>>>>>> 9aab2e1f65f42ca8fce91c2f91c869ad8bf4b36c
         if 'hidden_pay' in request.POST:
             formpay = CreatePaymentForm(data=request.POST)
             if formpay.is_valid():
