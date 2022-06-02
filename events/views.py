@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from datetime import datetime
-from events.models import Event
+from events.models import Event, Categories
 
 def index(request):
     today = datetime.today()
@@ -22,9 +22,11 @@ def index(request):
             'image': x.image_url,
             'name': x.name,
             'start_date': x.start_date,
-        }for x in Event.objects.filter(start_date__gte=today, category_id_id__in=event_filter).order_by('start_date')]
+        }for x in Event.objects.filter(start_date__gte=today, category_id__in=event_filter).order_by('name')]
         return JsonResponse({'data': events})
-    
+
+
+
     context = {'events': Event.objects.filter(start_date__gte=today).order_by('start_date')}
     # tickets = {'ticket': Ticket.objects.all()}
     return render(request, 'events/index.html', context)
