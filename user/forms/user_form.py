@@ -13,6 +13,7 @@ class UserCreateForm(UserCreationForm):
             'email': widgets.TextInput(attrs={'class': 'form-control'}),
             'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
+            # 'image': widgets.ClearableFileInput(attrs={'class': 'form-control'})
             'image_url': widgets.TextInput(attrs={'class': 'form-control'})
         }
 
