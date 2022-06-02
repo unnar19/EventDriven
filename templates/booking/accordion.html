@@ -19,9 +19,7 @@
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionBooking">
         <div class="accordion-body">
-            <!-- <div class="hiddenfield" id="hidden_user_email"> {{ user.id }}</div> -->
-            <!-- <div class="hiddenfield" id="hidden_event_id"> {{ event.id }}</div> -->
-            {% include 'booking/delivery.html' %}
+          {% include 'booking/hidden_delivery.html' %}
             <a class="btn sub_btn" id="del_next"  data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Next
             </a>
@@ -36,7 +34,7 @@
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionBooking">
         <div class="accordion-body">
-          {% include 'booking/payment.html' %}
+          {% include 'booking/payment_information.html' %}
           <a class="btn sub_btn" id="pay_next"  data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             Next
           </a>
@@ -51,7 +49,7 @@
       </h2>
       <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionBooking">
         <div class="accordion-body">
-            cool
+          {% include 'booking/overview.html' %}
         </div>
       </div>
     </div>

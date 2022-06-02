@@ -58,8 +58,11 @@ $(document).ready(function (){
     });
 });
 
+
+// Amount counter
 $(document).ready(function (){
     let subtotal = $('#subtotal').text();
+    $('#sub_form').val(parseInt(subtotal))
 
     $('#add').on('click',function (e){
         e.preventDefault();
@@ -68,7 +71,15 @@ $(document).ready(function (){
             $('#amount').html(amount + 1);
             $('#sub').prop('disabled', false);
             $('#subtotal').html(parseInt(subtotal)*(amount+1))
+            $('#sub_form').val(parseInt(subtotal)*(amount+1))
             $('#form-amount').val(amount + 1)
+        } if ( (amount >= 10) || (amount < 1) ) {
+            $('#amount').html(10);
+            amount = parseInt($('#amount').text());
+            $('#sub').prop('disabled', false);
+            $('#subtotal').html(parseInt(subtotal)*(amount))
+            $('#sub_form').val(parseInt(subtotal)*(amount))
+            $('#add').prop('disabled', true);
         } if ( amount == 9 ) {
             $('#add').prop('disabled', true);
         }
@@ -80,13 +91,23 @@ $(document).ready(function (){
             $('#amount').html(amount - 1);
             $('#add').prop('disabled', false);
             $('#subtotal').html(parseInt(subtotal)*(amount-1))
+            $('#sub_form').val(parseInt(subtotal)*(amount-1))
             $('#form-amount').val(amount - 1)
+        } if ( (amount > 10) || (amount < 1) ) {
+            $('#amount').html(1);
+            amount = parseInt($('#amount').text());
+            $('#add').prop('disabled', false);
+            $('#subtotal').html(parseInt(subtotal)*(amount))
+            $('#sub_form').val(parseInt(subtotal)*(amount))
+            $('#sub').prop('disabled', true);
         } if ( amount == 2 ) {
             $('#sub').prop('disabled', true);
         }
     });
+    
 });
 
+// Accordion Navigation
 $(document).ready(function (){
     $('#acc1').css({"background-color": "#c93b3b","color":"white"})
     $('#acc2').css({"background-color": "#c93b3b","color":"white"})
@@ -110,5 +131,54 @@ $(document).ready(function (){
     });
     $('#pay_next').on('click',function (){
         $('#acc4').prop('disabled', false)
+    });
+});
+
+// CVC
+$(document).ready(function (){
+    $('#cvc_input').on('input',function (){
+        if ($('#cvc_input').val.toString().length > 3) {
+            $('#cvc_input').val($('#cvc_input').val().toString().slice(0,3))
+        }
+    });
+});
+
+// EXP
+$(document).ready(function (){    
+    $('#month').on('input',function (){
+        value = $('#month').val()
+        if (isNaN(value)) {
+            $('#month').val(1)
+        } else if (value.toString().length > 2) {
+                $('#month').val(value.toString().slice(0,-2))
+        } 
+        value = $('#month').val()
+        if (value > 12) {
+            $('#month').val(12)
+        }
+    });
+    $('#year').on('input',function (){
+        value = $('#year').val()
+        if (value <1 || isNaN(value)) {
+            $('#year').val(1)
+        }
+    });
+});
+
+// Card Number
+$(document).ready(function (){
+    $('#card_no').on('input',function (){
+        value = $('#card_no').val()
+        if ($('#card_no').val.toString().length > 16) {
+            $('#card_no').val(value.toString().slice(0,16))
+        }
+    });
+});
+
+$(document).ready(function (){
+$('#confirm').on('click',function (e){
+        e.preventDefault();
+        $('#delform_btn').trigger('click');
+        $('#payform').trigger('click');
     });
 });

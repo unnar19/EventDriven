@@ -1,0 +1,21 @@
+<form >
+    <div>
+        <label>Name of cardholder:</label>
+        <input class="form-control" type="text">
+    </div>
+    <div>
+        <label>Card number:</label>
+        <input class="form-control" id="card_no" type="number" maxlength="16"> 
+    </div>
+    <div>
+        <label>Exp date:</label>
+        <div class="input-group exp_container">
+            <input class="exp form-control" id="month" placeholder="MM" type="text">
+            <input class="exp form-control" id="year" maxlength="2" placeholder="YY" type="text">
+        </div>
+    </div>
+    <div>
+        <label>CVC:</label>
+        <input id="cvc_input" class="form-control" type="number", min="0">
+    </div>
+</form>

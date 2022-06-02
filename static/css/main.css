@@ -438,7 +438,13 @@ a:link {
 .hiddenfield {
     display:none;
 }
-#acc1 #acc2 #acc3 #acc4{
-    background-color: #c93b3b;
-    color: white;
+
+.exp_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.exp_container input{
+    width: 5rem;
+    padding: 0.375rem .75rem;
 }

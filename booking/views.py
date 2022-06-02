@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from events.models import Event
 from booking.models import Booking
 from user.models import Account
-from booking.forms.booking_form import CreatePaymentForm, CreateBookingForm
+from booking.forms.booking_form import CreateBookingForm
 
 
 def index(request):
@@ -28,36 +28,18 @@ def book_an_event(request, id):
     event = get_object_or_404(Event, pk=id)
     current_user = get_object_or_404(Account, pk=request.user.id)
     formdel = CreateBookingForm()
-    formpay = CreatePaymentForm()
     if request.method == 'POST':
-        if 'hidden_del' in request.POST:
-            formdel = CreateBookingForm(data=request.POST)
-            print(type(request.POST))
-            if formdel.is_valid():
-                del_dict = formdel.cleaned_data
-                del_model = Booking(
-                    full_name = del_dict["full_name"],
-                    user_id = current_user,
-                    event_id = event,
-                    amount = del_dict["amount"],
-                    street_name = del_dict["street_name"],
-                    house_num = del_dict["house_num"],
-                    zip = del_dict["zip"],
-                    country = del_dict["country"],
-                    city = del_dict["city"]
-                )
-
-                del_model.save()
-
-                pass
-        if 'hidden_pay' in request.POST:
-            formpay = CreatePaymentForm(data=request.POST)
-            if formpay.is_valid():
-                formpay.save()
-                return redirect('booking-index')
+        formdel = CreateBookingForm(data=request.POST)
         
-    return render(request, 'booking/booking_details.html', {
-        'formdel': formdel,
-        'formpay': formpay,
-        'event': event
-    })
+        if formdel.is_valid():
+            booking = formdel.save(commit=False)
+            booking.user_id = current_user
+            booking.event_id = event
+        
+            booking.save()
+            return redirect('booking-index')
+    else:
+        return render(request, 'booking/booking_details.html', {
+            'formdel': formdel,
+            'event': event,
+        })
