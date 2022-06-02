@@ -32,6 +32,7 @@ def book_an_event(request, id):
     if request.method == 'POST':
         if 'hidden_del' in request.POST:
             formdel = CreateBookingForm(data=request.POST)
+            print(type(request.POST))
             if formdel.is_valid():
                 del_dict = formdel.cleaned_data
                 del_model = Booking(
@@ -45,9 +46,14 @@ def book_an_event(request, id):
                     country = del_dict["country"],
                     city = del_dict["city"]
                 )
+
                 del_model.save()
 
+<<<<<<< HEAD
                 # return redirect('booking-index')
+=======
+                pass
+>>>>>>> 9aab2e1f65f42ca8fce91c2f91c869ad8bf4b36c
         if 'hidden_pay' in request.POST:
             formpay = CreatePaymentForm(data=request.POST)
             if formpay.is_valid():

@@ -94,3 +94,29 @@ $(document).ready(function (){
         }
     });
 });
+
+$(document).ready(function (){
+    $('#acc1').css({"background-color": "#c93b3b","color":"white"})
+    $('#acc2').css({"background-color": "#c93b3b","color":"white"})
+    $('#acc3').css({"background-color": "#c93b3b","color":"white"})
+    $('#acc4').css({"background-color": "#c93b3b","color":"white"})
+
+    $('#postal_delivery').on('click',function (){
+        $('#acc1').prop('disabled', false)
+        $('#acc2').prop('disabled', false)
+        $('#acc2').html('Delivery information')
+        $('#acc2').css({"background-color": "#c93b3b","color":"white"})   //;
+    });
+    $('#email_delivery').on('click',function (){
+        $('#acc1').prop('disabled', false)
+        $('#acc2').prop('disabled', true)
+        $('#acc2').html('Delivery information (skipped)')
+        $('#acc2').css({"background-color": "#db7171","color":"white"})   //#c93b3b;
+    });
+    $('#del_next').on('click',function (){
+        $('#acc3').prop('disabled', false)
+    });
+    $('#pay_next').on('click',function (){
+        $('#acc4').prop('disabled', false)
+    });
+});

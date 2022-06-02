@@ -21,13 +21,4 @@ class Payment(models.Model):
     date = models.DateField(auto_now_add=True)
     subtotal = models.IntegerField()
     booking_id = models.ForeignKey(Booking, on_delete=models.SET_NULL, null=True)
-    name_of_card_holder = models.CharField(max_length=250)
-    card_number = models.CharField(max_length=256)
-    exp_date = models.DateField()
-    cvc = models.IntegerField()
-
-    def save(self, **kwargs):
-        some_salt = 'some_salt'
-        card_number = make_password(self.card_number, some_salt)
-        super().save(**kwargs)
         
