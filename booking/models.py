@@ -2,7 +2,7 @@ from operator import truediv
 from django.db import models
 from user.models import Account
 from events.models import Event
-from django.contrib.auth.hashers import make_password
+from django_countries.fields import CountryField
 
 
 class Booking(models.Model):
@@ -13,7 +13,7 @@ class Booking(models.Model):
     street_name = models.CharField(max_length=150, blank=True, null=True)
     house_num = models.PositiveIntegerField(blank=True, null=True)
     zip = models.PositiveIntegerField(blank=True, null=True)
-    country = models.CharField(max_length=100, blank=True, null=True)
+    country = CountryField(blank=True, null=True)
     city = models.CharField(max_length=100, blank=True, null=True)
     time = models.TimeField(auto_now_add=True)
     date = models.DateField(auto_now_add=True)
