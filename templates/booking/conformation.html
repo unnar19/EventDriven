@@ -2,7 +2,23 @@
 {% block content %}
 
     <div class="bg_container" style="background-image: url('{{ event.image_url }}');"></div>
-    <a>Congratulations you have confirmed your booking for {{ booking.event_id.name }}</a>
-    <a class="btn light_btn" href="/">Home</a>
+    <div class="float-confirmation">
+        <div class="float-child-small">
+            <h4>Your purchase is being processed</h4>
+        </div>
+        <div class="float-child-medium">
+            <h4>Thank you for buying tickets for</h4>
+        </div>
+        <div class="float-child-large">
+            <h1>{{ booking.event_id.name }}</h1>
+        </div>
+        <div class="float-child-extralarge">
+            <h1>Enjoy!</h1>
+        </div>
+        <a class="btn home_btn" href="/">BACK TO HOMEPAGE</a>
+
+    </div>
+
+
 
 {% endblock %}
