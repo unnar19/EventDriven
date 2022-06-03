@@ -29,12 +29,22 @@ $(document).ready(function (){
 
 $(document).ready(function (){
     $('#filter-btn').on('click',function (e){
+        console.log('filter press')
         e.preventDefault();
-        var searchText = $('input[class="form-check-input"]:checked').val();
+
+        var searchText = '';
+        var searchlist = [];
+        $('input[class="form-check-input"]:checked').each(function() {
+            searchlist.push($(this).attr('name'));
+        });
+        var searchText = searchlist.toString();
+        searchText = searchText.replace(new RegExp(',', 'g'),"")
+
         $.ajax({
             url:'/events?event_filter=' + searchText,
             type: 'GET',
             success: function(resp = {}){
+                console.log(resp.data)
                 var newHtml = resp.data.map(d => {
                     return `<div class="well_events"> 
                                 <a href="/events/${d.id}">
