@@ -37,6 +37,7 @@ def book_an_event(request, id):
             booking.event_id = event
         
             booking.save()
+
             return redirect('conformation',id=booking.id)
     else:
         return render(request, 'booking/booking_details.html', {
@@ -53,3 +54,4 @@ def book_conformation(request, id):
 
 def conformation_index(request):
     return render(request,'booking/conformation.html')
+
