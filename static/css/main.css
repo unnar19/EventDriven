@@ -532,3 +532,21 @@ a:link {
     border: 1px solid #ced4da;
     border-radius: 0.375rem;
 }
+
+.user_image {
+    border: 2px solid white;
+    border-radius:100%;
+    width:304px;
+    height:304px;
+    margin-left: -45px;
+    margin-top: -100px;
+    margin-bottom: 2rem;
+    
+}
+
+.user_image img{
+    border-radius:100%;
+    width:300px;
+    height:300px;
+    object-fit: cover;    
+}

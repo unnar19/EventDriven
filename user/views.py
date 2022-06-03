@@ -48,5 +48,6 @@ def profile(request):
             return redirect('profile')
     return render(request, 'user/profile.html', {
         'form': ProfileForm(instance=profile),
+        'user': profile
         # 'categories': Categories.objects.all()
     })
