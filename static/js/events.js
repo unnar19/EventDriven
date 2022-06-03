@@ -32,7 +32,15 @@ $(document).ready(function (){
     $('#filter-btn').on('click',function (e){
         console.log('filter press')
         e.preventDefault();
-        var searchText = $('input[class="form-check-input"]:checked').val();
+
+        var searchText = '';
+        var searchlist = [];
+        $('input[class="form-check-input"]:checked').each(function() {
+            searchlist.push($(this).attr('name'));
+        });
+        var searchText = searchlist.toString();
+        searchText = searchText.replace(new RegExp(',', 'g'),"")
+
         $.ajax({
             url:'/events?event_filter=' + searchText,
             type: 'GET',
