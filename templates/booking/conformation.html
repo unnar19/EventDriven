@@ -3,19 +3,28 @@
 
     <div class="bg_container" style="background-image: url('{{ event.image_url }}');"></div>
     <div class="float-confirmation">
-        <div class="float-child-small">
+        <div class="float-child-small" style="text-align: center">
             <h4>Your purchase is being processed</h4>
+            <h4>and will be delivered via
+                {% if booking.email_delivery %}
+                    email to</h4>
+            <p>{{booking.user_id.email}}</p>
+            {% else %}
+                postal service to </h4>
+            <p>{{booking.street_name}} {{booking.house_num}}, {{booking.zip}} {{booking.city}}, {{booking.country}}</p>
+            {% endif %}
+            
         </div>
-        <div class="float-child-medium">
+        <div class="float-child-medium"  style="text-align: center">
             <h4>Thank you for buying tickets for</h4>
         </div>
-        <div class="float-child-large">
+        <div class="float-child-large"  style="text-align: center">
             <h1>{{ booking.event_id.name }}</h1>
         </div>
-        <div class="float-child-extralarge">
+        <div class="float-child-extralarge"  style="text-align: center">
             <h1>Enjoy!</h1>
         </div>
-        <a class="btn home_btn" href="/">BACK TO HOMEPAGE</a>
+        <a class="btn home_btn extra" href="/">BACK TO HOMEPAGE</a>
 
     </div>
 
