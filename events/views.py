@@ -33,8 +33,17 @@ def index(request):
 
 
 def get_event_by_id(request, id):
+    today = datetime.today()
+    event = get_object_or_404(Event, pk=id)
+    events = Event.objects.filter(start_date__gte=today,category_id=event.category_id).order_by('start_date')
+    events = events.exclude(pk=id)
+    if len(events) > 2:
+        events = events[0:2]
+
+    print(event.category_id)
     return render(request,'events/event_dietails.html', {
-        'event': get_object_or_404(Event, pk=id)
+        'event': event,
+        'events': events
     })
 
 

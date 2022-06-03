@@ -237,6 +237,44 @@ a:link {
 
 /* Event screen ====================================================*/
 
+.list_of_similar {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.well_similar_events {
+    width:45%;
+    display:inline-block;
+    margin-bottom: 1rem;
+    padding:0.5rem;
+    height:15rem;
+}
+
+.well_similar_events img{
+    width:100%;
+    height:15rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    filter: brightness(80%);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; 
+}
+
+.well_similar_events h2{
+    font-family: 'Niramit', sans-serif;
+    font-size:x-large;
+    margin-top: -14rem;
+    margin-bottom: 11.47em;
+    margin-left: 1.5rem;
+    color: white;
+    filter: brightness(100%)  
+}
+
+
 .details_container {
     padding: 1rem;
     float: left;
@@ -310,6 +348,8 @@ a:link {
     object-fit: cover;
     border-radius: 2rem;
 }
+
+
 .img_info {
     margin-top: 1rem;
     margin-left: 1rem;
