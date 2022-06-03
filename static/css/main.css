@@ -527,12 +527,7 @@ a:link {
 }
 
 .float-child-large {
-    margin-left: 20%;
     margin-bottom: 30px;
-}
-
-.float-child-extralarge {
-    margin-left: 34%;
 }
 
 .home_btn {
@@ -541,7 +536,7 @@ a:link {
     color: white;
     float: right;
     margin-top: 50px;
-    margin-left: 80px;
+    margin-left: 115px;
 }
 
 .home_btn:hover {

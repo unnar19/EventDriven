@@ -7,7 +7,6 @@ $(document).ready(function (){
             url:'/events?search_filter=' + searchText,
             type: 'GET',
             success: function(resp = {}){
-                console.log(resp.data)
                 var newHtml = resp.data.map(d => {
                     return `<div class="well_events"> 
                                 <a href="/events/${d.id}">
@@ -30,22 +29,12 @@ $(document).ready(function (){
 
 $(document).ready(function (){
     $('#filter-btn').on('click',function (e){
-        console.log('filter press')
         e.preventDefault();
-
-        var searchText = '';
-        var searchlist = [];
-        $('input[class="form-check-input"]:checked').each(function() {
-            searchlist.push($(this).attr('name'));
-        });
-        var searchText = searchlist.toString();
-        searchText = searchText.replace(new RegExp(',', 'g'),"")
-
+        var searchText = $('input[class="form-check-input"]:checked').val();
         $.ajax({
             url:'/events?event_filter=' + searchText,
             type: 'GET',
             success: function(resp = {}){
-                console.log(resp.data)
                 var newHtml = resp.data.map(d => {
                     return `<div class="well_events"> 
                                 <a href="/events/${d.id}">
@@ -117,6 +106,7 @@ $(document).ready(function (){
 
 // Accordion Navigation
 $(document).ready(function (){
+    $('#form-check').prop('checked',false)
     $('#acc1').css({"background-color": "#c93b3b","color":"white"})
     $('#acc2').css({"background-color": "#c93b3b","color":"white"})
     $('#acc3').css({"background-color": "#c93b3b","color":"white"})
@@ -127,12 +117,16 @@ $(document).ready(function (){
         $('#acc2').prop('disabled', false)
         $('#acc2').html('Delivery information')
         $('#acc2').css({"background-color": "#c93b3b","color":"white"})   //;
+        $('#form-check').prop('checked',false)
+        
     });
     $('#email_delivery').on('click',function (){
         $('#acc1').prop('disabled', false)
         $('#acc2').prop('disabled', true)
         $('#acc2').html('Delivery information (skipped)')
-        $('#acc2').css({"background-color": "#db7171","color":"white"})   //#c93b3b;
+        $('#acc2').css({"background-color": "#db7171","color":"white"})
+        $('#form-check').prop('checked',true)
+
     });
     $('#del_next').on('click',function (){
         $('#acc3').prop('disabled', false)
@@ -142,40 +136,7 @@ $(document).ready(function (){
     });
 });
 
-// Front end validation for delivery
-$(document).ready(function (){
-    $('#del_validate').on('click',function (){
-        del_success = validate_del()
-        if (del_success) {
-            $('#del_validate').css({'display':'none'});
-            $('#del_next').css({'display':'block'});
-        }
-    });
-});
-
-function clear_validation_del() {
-    del_id_list = ['#f_name','#f_street','#f_num','#f_zip','#f_count','#f_city']
-    for (let k = 0; k < del_id_list.length; k++) {
-        $(del_id_list[k]).css({"visibility":"hidden"})
-    }
-}
-
-function validate_del() {
-    clear_validation_del()
-    del_id_list = ['#f_name','#f_street','#f_num','#f_zip','#f_city']
-    del_id_forms = ['#form_name','#form_street','#form_num','#form_zip','#form_city']
-    successful = true
-    for (let k = 0; k < del_id_forms.length; k++) {
-        if ($(del_id_forms[k]).val() == '') {
-            $(del_id_list[k]).css({"visibility":"visible"})
-            successful = false
-        }
-    }
-    return successful
-    
-}
-
-// CVC input field restrictions
+// Email or Postal delivery
 $(document).ready(function (){
     $('#cvc_input').on('input',function (){
         if ($('#cvc_input').val.toString().length > 3) {
@@ -183,6 +144,7 @@ $(document).ready(function (){
         }
     });
 });
+
 
 // EXP input field restrictions
 $(document).ready(function (){    
