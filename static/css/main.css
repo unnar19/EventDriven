@@ -503,3 +503,41 @@ a:link {
 .form_btn {
     margin-top: 1rem;
 }
+
+/* Confirmation ====================================================*/
+.float-confirmation {
+    margin-left: 33%;
+}
+
+.float-child-small {
+    margin-bottom: 30px;
+    margin-top: 30%;
+}
+
+.float-child-medium {
+    margin-left: 2%;
+}
+
+.float-child-large {
+    margin-left: 20%;
+    margin-bottom: 30px;
+}
+
+.float-child-extralarge {
+    margin-left: 34%;
+}
+
+.home_btn {
+    position: absolute;
+    background-color:#c93b3b;
+    color: white;
+    float: right;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.home_btn:hover {
+    background-color:#db7171;
+}
+.home_btn:focus {
+    background-color:#c93b3b;
