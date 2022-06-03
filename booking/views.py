@@ -38,8 +38,9 @@ def book_an_event(request, id):
         
             booking.save()
             return redirect('booking-index')
-    else:
-        return render(request, 'booking/booking_details.html', {
-            'formdel': formdel,
-            'event': event,
-        })
+        
+
+    return render(request, 'booking/booking_details.html', {
+        'formdel': formdel,
+        'event': event,
+    })

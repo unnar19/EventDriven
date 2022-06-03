@@ -410,6 +410,17 @@ a:link {
     padding-right: 2rem;
 }
 
+.accordion {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center_card {
+    display: inline
+    
+}
+
 #accordionBooking {
     width:100%;
 }
@@ -447,4 +458,8 @@ a:link {
 .exp_container input{
     width: 5rem;
     padding: 0.375rem .75rem;
+}
+
+.form_btn {
+    margin-top: 1rem;
 }

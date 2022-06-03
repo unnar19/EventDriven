@@ -4,7 +4,9 @@
     <div class="padded_content">
         <a class="btn light_btn" href="/events/{{ event.id }}">Back</a>
         <h1 class="booking_title">{{ event.name }}</h1>
-        {% include 'booking/accordion.html' %}
+        <div class="center_card">
+            {% include 'booking/accordion.html' %}
+        </div>
     </div>
     <div class="bg_container" style="background-image: url('{{ event.image_url }}');"></div>
 </div>

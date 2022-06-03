@@ -134,7 +134,40 @@ $(document).ready(function (){
     });
 });
 
-// CVC
+// Front end validation for delivery
+$(document).ready(function (){
+    $('#del_validate').on('click',function (){
+        del_success = validate_del()
+        if (del_success) {
+            $('#del_validate').css({'display':'none'});
+            $('#del_next').css({'display':'block'});
+        }
+    });
+});
+
+function clear_validation_del() {
+    del_id_list = ['#f_name','#f_street','#f_num','#f_zip','#f_count','#f_city']
+    for (let k = 0; k < del_id_list.length; k++) {
+        $(del_id_list[k]).css({"visibility":"hidden"})
+    }
+}
+
+function validate_del() {
+    clear_validation_del()
+    del_id_list = ['#f_name','#f_street','#f_num','#f_zip','#f_city']
+    del_id_forms = ['#form_name','#form_street','#form_num','#form_zip','#form_city']
+    successful = true
+    for (let k = 0; k < del_id_forms.length; k++) {
+        if ($(del_id_forms[k]).val() == '') {
+            $(del_id_list[k]).css({"visibility":"visible"})
+            successful = false
+        }
+    }
+    return successful
+    
+}
+
+// CVC input field restrictions
 $(document).ready(function (){
     $('#cvc_input').on('input',function (){
         if ($('#cvc_input').val.toString().length > 3) {
@@ -143,7 +176,7 @@ $(document).ready(function (){
     });
 });
 
-// EXP
+// EXP input field restrictions
 $(document).ready(function (){    
     $('#month').on('input',function (){
         value = $('#month').val()
@@ -165,7 +198,7 @@ $(document).ready(function (){
     });
 });
 
-// Card Number
+// Card Number input field restrictions
 $(document).ready(function (){
     $('#card_no').on('input',function (){
         value = $('#card_no').val()
@@ -175,6 +208,7 @@ $(document).ready(function (){
     });
 });
 
+// Confirm booking, link invisible form button to confirmation button
 $(document).ready(function (){
 $('#confirm').on('click',function (e){
         e.preventDefault();
