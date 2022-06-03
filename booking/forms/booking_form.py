@@ -13,9 +13,11 @@ class CreateBookingForm(ModelForm):
         exclude = ['id','user_id','event_id']
         labels = {
               'amount':"",
-              'subtotal':""
+              'subtotal':"",
+              'email_delivery':""
               }
         widgets = {
+            'email_delivery': widgets.CheckboxInput(attrs={'class': 'hiddenfield','id': 'form-check'}),
             'amount': widgets.NumberInput(attrs={'class': 'hiddenfield','id': 'form-amount','value':'1'}),
             'subtotal': widgets.TextInput(attrs={'id': 'sub_form','class': 'form-control hiddenfield'}),
             'full_name': widgets.TextInput(attrs={'id':'form_name', 'class': 'form-control',}),
