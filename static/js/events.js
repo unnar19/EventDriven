@@ -187,6 +187,5 @@ $(document).ready(function (){
 $('#confirm').on('click',function (e){
         e.preventDefault();
         $('#delform_btn').trigger('click');
-        $('#payform').trigger('click');
     });
 });
