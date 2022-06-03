@@ -22,8 +22,11 @@
         </div>
         <div class="img_info">
             <p>Similar events:</p>
-            <img class="events_img2" src="{{ event.image_url }}">
-            <img class="events_img2" src="{{ event.image_url }}">
+            <div class="list_of_similar">
+            {% for similar in events %}
+                {% include 'events/similar_event.html' with event=similar %}
+            {% endfor %}
+            </div>
             <p class="v_space"></p>
             <p class="v_space"></p>
             <p>Images:</p> 
