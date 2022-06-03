@@ -23,3 +23,4 @@ urlpatterns = [
     path('booking/', include('booking.urls')),
     path('user/', include('user.urls'))
 ]
+handler404 = "EventDriven.views.page_not_found_view"

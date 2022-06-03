@@ -596,3 +596,9 @@ a:link {
     object-fit: cover;    
 }
 
+#div404{
+    margin: auto;
+    width: 500px;
+    padding: 10px;
+}
+
