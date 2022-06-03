@@ -128,14 +128,27 @@ $(document).ready(function (){
         $('#acc2').html('Delivery information')
         $('#acc2').css({"background-color": "#c93b3b","color":"white"})   //;
         $('#form-check').prop('checked',false)
+
+        $('#form_name').val('')
+        $('#form_street').val('')
+        $('#form_num').val('')
+        $('#form_zip').val('')
+        $('#form_city').val('')
+
         
     });
     $('#email_delivery').on('click',function (){
         $('#acc1').prop('disabled', false)
-        $('#acc2').prop('disabled', true)
+        $('#acc2').prop('disabled', false)
         $('#acc2').html('Delivery information (skipped)')
         $('#acc2').css({"background-color": "#db7171","color":"white"})
         $('#form-check').prop('checked',true)
+        
+        $('#form_name').val('Not relevant')
+        $('#form_street').val('Not relevant')
+        $('#form_num').val(999)
+        $('#form_zip').val(999)
+        $('#form_city').val('Not relevant')
 
     });
     $('#del_next').on('click',function (){
@@ -180,6 +193,7 @@ $(document).ready(function (){
 
 // Card Number input field restrictions
 $(document).ready(function (){
+    $('#collapseOne').addClass('show')
     $('#card_no').on('input',function (){
         value = $('#card_no').val()
         if ($('#card_no').val.toString().length > 16) {
@@ -192,6 +206,8 @@ $(document).ready(function (){
 $(document).ready(function (){
 $('#confirm').on('click',function (e){
         e.preventDefault();
+        $('#collapseTwo').addClass('show')
+        $('#collapseThree').removeClass('show')
         $('#delform_btn').trigger('click');
     });
 });
