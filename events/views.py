@@ -37,3 +37,5 @@ def get_event_by_id(request, id):
         'event': get_object_or_404(Event, pk=id)
     })
 
+
+

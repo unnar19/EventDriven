@@ -37,9 +37,19 @@ def book_an_event(request, id):
             booking.event_id = event
         
             booking.save()
-            return redirect('booking-index')
+            return redirect('conformation',id=booking.id)
     else:
         return render(request, 'booking/booking_details.html', {
             'formdel': formdel,
             'event': event,
         })
+
+def book_conformation(request, id):
+    booking = get_object_or_404(Booking, pk=id)
+    return render(request, 'booking/conformation.html', {
+        'booking': booking,
+        'event': get_object_or_404(Event, pk=booking.event_id.id),
+    })
+
+def conformation_index(request):
+    return render(request,'booking/conformation.html')

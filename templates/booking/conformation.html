@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="bg_container" style="background-image: url('{{ event.image_url }}');"></div>
+    <a>Congratulations you have confirmed your booking for {{ booking.event_id.name }}</a>
+    <a class="btn light_btn" href="/">Home</a>
+
+{% endblock %}
