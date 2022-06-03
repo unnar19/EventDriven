@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Profile</h1>
-    <form class="form form-horizontal" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" class="btn sub_btn right-align" value="Update">
-    <a class="btn light_btn" href="/">Back</a>
-    </form>
+    <div id = "login_div">
+        <form class="form form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <div class="login_div2">
+                <input type="submit" id="login_btn" class="btn sub_btn" value="Update">
+            </div>
+            <a class="btn light_btn" href="/">Back</a>
+        </form>
+    </div>
 {% endblock %}

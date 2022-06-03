@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <form method="post" class="form form-horizontal">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" class="btn sub_btn right-align" value="Login"/>
-    </form>
+    <div id="login_div">
+        <form method="post" class="form form-horizontal" style=" display:inline-block; justify-content:center; height:50vh; width: 200px">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" id="login_btn" class="btn sub_btn" value="Login" />
+        </form>
+    </div>
 {% endblock %}
