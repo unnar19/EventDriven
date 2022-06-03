@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Profile</h1>
-    <form class="form form-horizontal" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" class="btn sub_btn right-align" value="Update">
-    <a class="btn light_btn" href="/">Back</a>
-    </form>
+    <div id = "login_div">
+        <div class="user_image">
+            {% if user.image_url == None %}
+            <img src='https://www.business2community.com/wp-content/plugins/wp-user-avatars/wp-user-avatars/assets/images/mystery.jpg' alt="">
+            {% else %}
+            <img src="{{user.image_url}}" alt="">
+            {% endif %}
+        </div>
+        <form class="form form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <div class="login_div2">
+                <input type="submit" id="login_btn" class="btn sub_btn" value="Update">
+            </div>
+            <a class="btn light_btn" href="/">Back</a>
+        </form>
+    </div>
 {% endblock %}

@@ -22,14 +22,9 @@
           <div class="right-align_1">
             {% if user.is_authenticated %}
               <a class="btn sub_btn" href="{% url 'logout' %}">Logout</a>
-              <a class="btn sub_btn" href="{% url 'profile' %}">Profile
-                  
-                  {% if user.image_url == None %}
-                    <img src='https://www.business2community.com/wp-content/plugins/wp-user-avatars/wp-user-avatars/assets/images/mystery.jpg' class="profile_image" alt="">
-                    {% else %}
-                    <img src="{{ user.image_url }}" class="profile_image">
-                    {% endif %}
-                  </a>
+              <a class="btn sub_btn" href="{% url 'profile' %}">
+                  Profile
+                  <img src="{{ user.image_url }}" class="profile_image"></a>
             {% else %}
               <a class="btn sub_btn" href="{% url 'login' %}"> Login</a>
               <a class="btn sub_btn" href="{% url 'register' %}">Register</a>
@@ -77,7 +72,7 @@
           </div>
         </div>
           <button class="btn sub_btn" id="filter-btn">
-              Apply
+              Apply filter
           </button>
         <div class="nav-slider">
           <h4>Price range: </h4> 0 kr - <output>50</output>.000 kr
